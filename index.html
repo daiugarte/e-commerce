@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Store</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <link
+      href="./bootstrap-5.3.1-dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="./styles/styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="bg-body-tertiary">
+      <nav class="navbar py-4">
+        <div class="container-md">
+          <a class="navbar-brand" href="#">Onile Store</a>
+          <button
+            class="btn btn-light position-relative"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#cartOverview"
+            aria-controls="cart-overview"
+          >
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span
+              id="cart-badge"
+              class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-pill bg-success"
+            >
+              0
+            </span>
+          </button>
+        </div>
+      </nav>
+      <div class="container-md py-4">
+        <input
+          type="text"
+          class="form-control form-control-lg"
+          placeholder="Buscar producto"
+          aria-label="Buscar producto"
+          id="searchInput"
+          oninput="searchProducts()"
+        />
+      </div>
+    </header>
+
+    <!-- Carrito -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="cartOverview"
+      aria-labelledby="cart-overview"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="cart-overview">Carrito</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column justify-content-between">
+        <!-- Lista de productos en el carrito -->
+        <ul class="list-group list-group-flush mb-4" id="cart-list">
+          <li class="list-group-item">An item</li>
+        </ul>
+        <div class="d-grid gap-2">
+          <button class="btn btn-outline-success" type="button">
+            Ir al checkout
+            <i class="fa-regular fa-credit-card"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Productos -->
+    <main class="products-conteiner container-md" id="products-gallery">
+      <!-- Aca se renderizan los productos -->
+    </main>
+
+    <script
+      src="https://kit.fontawesome.com/8a7faedf7a.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./bootstrap-5.3.1-dist/js/bootstrap.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="./js/scripts.js"></script>
+  </body>
+</html>
